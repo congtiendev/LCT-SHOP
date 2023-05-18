@@ -1,0 +1,2588 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+  color: #ffd700;
+} /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+  color: #ffed85;
+}
+/* slide */
+.slider {
+  width: 100%;
+  height: 500px;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* keyboard */
+
+#keyboard {
+  width: 1044px;
+  height: 315px;
+  margin: 10px auto;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #292929;
+  position: relative;
+}
+
+.clear {
+  clear: both;
+}
+
+.buttonFace {
+  width: 34px;
+  height: 29px;
+  margin: 1px auto;
+  border-radius: 3px;
+  text-align: left;
+  background-color: #202020;
+  font-size: 12px;
+  text-indent: 6px;
+  font-weight: 700;
+  padding-top: 5px;
+}
+.buttonFace:active,
+.buttonFacex15:active,
+.buttonFacePlus:active,
+.buttonFacex175:active,
+.buttonFacex275:active,
+.buttonFacex125:active,
+.buttonFacex2:active,
+.buttonFaceSpace:active,
+.buttonFacex225:active,
+.buttonFaceEnter:active,
+.buttonFace.pressed,
+.buttonFacex15.pressed,
+.buttonFacePlus.pressed,
+.buttonFacex175.pressed,
+.buttonFacex275.pressed,
+.buttonFacex125.pressed,
+.buttonFacex2.pressed,
+.buttonFaceSpace.pressed,
+.buttonFacex225.pressed,
+.buttonFaceEnter.pressed {
+  transform: scale(0.96, 0.96) translate(0, 3px);
+}
+
+.buttonFace p {
+  margin-top: -4px;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.buttonFacePlus {
+  width: 34px;
+  height: 79px;
+  margin: 1px auto;
+  border-radius: 3px;
+  text-indent: 6px;
+  line-height: 79px;
+  background-color: #202020;
+}
+
+.buttonFacex2 {
+  width: 77px;
+  height: 34px;
+  margin: 1px auto;
+  border-radius: 3px;
+  font-size: 13px;
+  text-indent: 6px;
+  background-color: #202020;
+}
+
+.buttonFacex15 {
+  width: 58px;
+  height: 34px;
+  margin: 1px auto;
+  border-radius: 3px;
+  background-color: #202020;
+  text-indent: 6px;
+  font-size: 13px;
+}
+
+.buttonFacex15 p {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.buttonFacex175 {
+  width: 69px;
+  height: 34px;
+  margin: 1px auto;
+  border-radius: 3px;
+  line-height: 30px;
+  background-color: #202020;
+  text-indent: 6px;
+  font-size: 13px;
+}
+
+.buttonFacex125 {
+  width: 47px;
+  height: 34px;
+  margin: 1px auto;
+  border-radius: 3px;
+  text-indent: 6px;
+  line-height: 30px;
+  font-size: 13px;
+  background-color: #202020;
+}
+
+.buttonFacex225 {
+  width: 91px;
+  height: 34px;
+  margin: 1px auto;
+  border-radius: 3px;
+  line-height: 30px;
+  background-color: #202020;
+  font-size: 13px;
+  text-indent: 6px;
+}
+
+.buttonFacex275 {
+  width: 113px;
+  height: 34px;
+  margin: 1px auto;
+  border-radius: 3px;
+  line-height: 30px;
+  text-indent: 6px;
+  font-size: 13px;
+  background-color: #202020;
+}
+
+.buttonFaceEnter {
+  width: 90px;
+  height: 34px;
+  margin: 1px auto;
+  border-radius: 3px;
+  text-indent: 6px;
+  background-color: #202020;
+}
+
+.buttonFaceEnter p {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.buttonFaceSpace {
+  width: 260px;
+  height: 29px;
+  margin: 1px auto;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #202020;
+  position: relative;
+  padding-top: 5px;
+}
+
+.typeR1 {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 12px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR2 {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 22px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR2x2 {
+  width: 87px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 22px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR3x15 {
+  width: 66px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-left: 12px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR3 {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR3Plus {
+  width: 42px;
+  height: 87px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  right: 13px;
+  float: left;
+  background-color: #000;
+  position: absolute;
+}
+
+.typeR4x175 {
+  width: 77px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-left: 12px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR4 {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR5x225 {
+  width: 99px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-left: 12px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR5 {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR5x275 {
+  width: 121px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR5Plus {
+  width: 42px;
+  height: 87px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  right: 13px;
+  float: left;
+  background-color: #000;
+  position: absolute;
+}
+
+.typeR6x125 {
+  width: 55px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.space {
+  width: 267px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR6 {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.typeR6x2 {
+  width: 87px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+.enterKey {
+  width: 98px;
+  height: 42px;
+  border: 1px solid #333;
+  margin-top: 1px;
+  margin-right: 1px;
+  float: left;
+  background-color: #000;
+}
+
+#signalLed {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+.led {
+  width: 20px;
+  height: 10px;
+  background-color: #000;
+  margin: 20px 15px 0;
+  float: left;
+}
+
+.button1 {
+  margin-left: 12px;
+  box-shadow: 0 0 2px #00d6b6;
+  color: #00ddba;
+  animation: ex1 4s linear infinite;
+}
+
+.button2 {
+  box-shadow: 0 0 2px #5afbd7;
+  color: #00d283;
+  animation: ex2 4s linear infinite;
+}
+
+.button3 {
+  box-shadow: 0 0 2px #00ffc6;
+  color: #00d587;
+  animation: ex3 4s linear infinite;
+}
+
+.button4 {
+  box-shadow: 0 0 2px #3dffb0;
+  color: #04faa9;
+  animation: ex4 4s linear infinite;
+}
+
+.button5 {
+  box-shadow: 0 0 2px #00ff97;
+  color: #9bd66b;
+  animation: ex5 4s linear infinite;
+}
+
+.button6 {
+  box-shadow: 0 0 2px #82ef29;
+  color: #fd824f;
+  animation: ex6 4s linear infinite;
+}
+
+.button7 {
+  box-shadow: 0 0 2px #b8ff7d;
+  color: #fd824f;
+  animation: ex7 4s linear infinite;
+}
+
+.button8 {
+  box-shadow: 0 0 2px #ffa782;
+  color: #e86027;
+  animation: ex8 4s linear infinite;
+}
+
+.button9 {
+  box-shadow: 0 0 2px #f57a47;
+  color: #ff57d9;
+  animation: ex9 4s linear infinite;
+}
+
+.button10 {
+  box-shadow: 0 0 2px #fb4a00;
+  color: #ff57d9;
+  animation: ex10 4s linear infinite;
+}
+
+.button11 {
+  box-shadow: 0 0 2px #c23220;
+  color: #7a54fa;
+  animation: ex11 4s linear infinite;
+}
+
+.button12 {
+  box-shadow: 0 0 2px #ff57d9;
+  color: #2135e0;
+  animation: ex12 4s linear infinite;
+}
+
+.button13 {
+  box-shadow: 0 0 2px #ff14ca;
+  color: #260ead;
+  animation: ex13 4s linear infinite;
+}
+
+.button14 {
+  box-shadow: 0 0 2px #fd00ff;
+  color: #0169fc;
+  animation: ex14 4s linear infinite;
+}
+
+.button15 {
+  box-shadow: -2px 5px 30px #d57a9e;
+  color: #00a0fe;
+  animation: ex15 4s linear infinite;
+}
+
+.button16 {
+  box-shadow: -2px 5px 30px #7a54fa;
+  color: #00c8fe;
+  animation: ex16 4s linear infinite;
+}
+
+.button17 {
+  box-shadow: -2px 5px 30px #3276ca;
+  animation: ex17 4s linear infinite;
+}
+
+.button18 {
+  box-shadow: -2px 5px 30px #00a0fe;
+  animation: ex18 4s linear infinite;
+}
+
+.button19 {
+  box-shadow: -2px 5px 30px #00c8fe;
+  animation: ex19 4s linear infinite;
+}
+
+.button20 {
+  box-shadow: 1px 5px 30px #4bfbfc;
+  animation: ex20 4s linear infinite;
+}
+
+.button21 {
+  box-shadow: 1px 5px 30px #a8f6fa;
+  animation: ex20 4s linear infinite;
+}
+
+@keyframes ex1 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+}
+@keyframes ex2 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+}
+@keyframes ex3 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+}
+@keyframes ex4 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+}
+@keyframes ex5 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+}
+@keyframes ex6 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+}
+@keyframes ex7 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+}
+@keyframes ex8 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+}
+@keyframes ex9 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+}
+@keyframes ex10 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+}
+@keyframes ex11 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+}
+@keyframes ex12 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+}
+@keyframes ex13 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+}
+@keyframes ex14 {
+  0% {
+    box-shadow: 5px 5px 10px;
+    color: #f57a47;
+  }
+  5% {
+    box-shadow: 5px 5px 10px;
+    color: #fb4a00;
+  }
+  10% {
+    box-shadow: 5px 5px 10px;
+    color: #c23220;
+  }
+  15% {
+    box-shadow: 5px 5px 10px;
+    color: #ff57d9;
+  }
+  20% {
+    box-shadow: 5px 5px 10px;
+    color: #ff14ca;
+  }
+  25% {
+    box-shadow: 5px 5px 10px;
+    color: #fd00ff;
+  }
+  30% {
+    box-shadow: 5px 5px 10px;
+    color: #d57a9e;
+  }
+  35% {
+    box-shadow: 5px 5px 10px;
+    color: #7a54fa;
+  }
+  40% {
+    box-shadow: 5px 5px 10px;
+    color: #3276ca;
+  }
+  45% {
+    box-shadow: 5px 5px 10px;
+    color: #00a0fe;
+  }
+  50% {
+    box-shadow: 5px 5px 10px;
+    color: #00c8fe;
+  }
+  55% {
+    box-shadow: 5px 5px 10px;
+    color: #4bfbfc;
+  }
+  60% {
+    box-shadow: 5px 5px 10px;
+    color: #a8f6fa;
+  }
+  65% {
+    box-shadow: 5px 5px 10px;
+    color: #00d6b6;
+  }
+  70% {
+    box-shadow: 5px 5px 10px;
+    color: #5afbd7;
+  }
+  75% {
+    box-shadow: 5px 5px 10px;
+    color: #00ffc6;
+  }
+  80% {
+    box-shadow: 5px 5px 10px;
+    color: #3dffb0;
+  }
+  85% {
+    box-shadow: 5px 5px 10px;
+    color: #00ff97;
+  }
+  90% {
+    box-shadow: 5px 5px 10px;
+    color: #82ef29;
+  }
+  95% {
+    box-shadow: 5px 5px 10px;
+    color: #b8ff7d;
+  }
+  100% {
+    box-shadow: 5px 5px 10px;
+    color: #ffa782;
+  }
+}
+@keyframes ex15 {
+  0% {
+    box-shadow: 2px 5px 10px;
+    color: #ffa782;
+  }
+  5% {
+    box-shadow: 2px 5px 10px;
+    color: #f57a47;
+  }
+  10% {
+    box-shadow: 2px 5px 10px;
+    color: #fb4a00;
+  }
+  15% {
+    box-shadow: 2px 5px 10px;
+    color: #c23220;
+  }
+  20% {
+    box-shadow: 2px 5px 10px;
+    color: #ff57d9;
+  }
+  25% {
+    box-shadow: 2px 5px 10px;
+    color: #ff14ca;
+  }
+  30% {
+    box-shadow: 2px 5px 10px;
+    color: #fd00ff;
+  }
+  35% {
+    box-shadow: 2px 5px 10px;
+    color: #d57a9e;
+  }
+  40% {
+    box-shadow: 2px 5px 10px;
+    color: #7a54fa;
+  }
+  45% {
+    box-shadow: 2px 5px 10px;
+    color: #3276ca;
+  }
+  50% {
+    box-shadow: 2px 5px 10px;
+    color: #00a0fe;
+  }
+  55% {
+    box-shadow: 2px 5px 10px;
+    color: #00c8fe;
+  }
+  60% {
+    box-shadow: 2px 5px 10px;
+    color: #4bfbfc;
+  }
+  65% {
+    box-shadow: 2px 5px 10px;
+    color: #a8f6fa;
+  }
+  70% {
+    box-shadow: 2px 5px 10px;
+    color: #00d6b6;
+  }
+  75% {
+    box-shadow: 2px 5px 10px;
+    color: #5afbd7;
+  }
+  80% {
+    box-shadow: 2px 5px 10px;
+    color: #00ffc6;
+  }
+  85% {
+    box-shadow: 2px 5px 10px;
+    color: #3dffb0;
+  }
+  90% {
+    box-shadow: 2px 5px 10px;
+    color: #00ff97;
+  }
+  95% {
+    box-shadow: 2px 5px 10px;
+    color: #82ef29;
+  }
+  100% {
+    box-shadow: 2px 5px 10px;
+    color: #b8ff7d;
+  }
+}
+@keyframes ex16 {
+  0% {
+    box-shadow: 2px 5px 10px;
+    color: #b8ff7d;
+  }
+  5% {
+    box-shadow: 2px 5px 10px;
+    color: #ffa782;
+  }
+  10% {
+    box-shadow: 2px 5px 10px;
+    color: #f57a47;
+  }
+  15% {
+    box-shadow: 2px 5px 10px;
+    color: #fb4a00;
+  }
+  20% {
+    box-shadow: 2px 5px 10px;
+    color: #c23220;
+  }
+  25% {
+    box-shadow: 2px 5px 10px;
+    color: #ff57d9;
+  }
+  30% {
+    box-shadow: 2px 5px 10px;
+    color: #ff14ca;
+  }
+  35% {
+    box-shadow: 2px 5px 10px;
+    color: #fd00ff;
+  }
+  40% {
+    box-shadow: 2px 5px 10px;
+    color: #d57a9e;
+  }
+  45% {
+    box-shadow: 2px 5px 10px;
+    color: #7a54fa;
+  }
+  50% {
+    box-shadow: 2px 5px 10px;
+    color: #3276ca;
+  }
+  55% {
+    box-shadow: 2px 5px 10px;
+    color: #00a0fe;
+  }
+  60% {
+    box-shadow: 2px 5px 10px;
+    color: #00c8fe;
+  }
+  65% {
+    box-shadow: 2px 5px 10px;
+    color: #4bfbfc;
+  }
+  70% {
+    box-shadow: 2px 5px 10px;
+    color: #a8f6fa;
+  }
+  75% {
+    box-shadow: 2px 5px 10px;
+    color: #00d6b6;
+  }
+  80% {
+    box-shadow: 2px 5px 10px;
+    color: #5afbd7;
+  }
+  85% {
+    box-shadow: 2px 5px 10px;
+    color: #00ffc6;
+  }
+  90% {
+    box-shadow: 2px 5px 10px;
+    color: #3dffb0;
+  }
+  95% {
+    box-shadow: 2px 5px 10px;
+    color: #00ff97;
+  }
+  100% {
+    box-shadow: 2px 5px 10px;
+    color: #82ef29;
+  }
+}
+@keyframes ex17 {
+  0% {
+    box-shadow: 2px 5px 10px;
+    color: #82ef29;
+  }
+  5% {
+    box-shadow: 2px 5px 10px;
+    color: #b8ff7d;
+  }
+  10% {
+    box-shadow: 2px 5px 10px;
+    color: #ffa782;
+  }
+  15% {
+    box-shadow: 2px 5px 10px;
+    color: #f57a47;
+  }
+  20% {
+    box-shadow: 2px 5px 10px;
+    color: #fb4a00;
+  }
+  25% {
+    box-shadow: 2px 5px 10px;
+    color: #c23220;
+  }
+  30% {
+    box-shadow: 2px 5px 10px;
+    color: #ff57d9;
+  }
+  35% {
+    box-shadow: 2px 5px 10px;
+    color: #ff14ca;
+  }
+  40% {
+    box-shadow: 2px 5px 10px;
+    color: #fd00ff;
+  }
+  45% {
+    box-shadow: 2px 5px 10px;
+    color: #d57a9e;
+  }
+  50% {
+    box-shadow: 2px 5px 10px;
+    color: #7a54fa;
+  }
+  55% {
+    box-shadow: 2px 5px 10px;
+    color: #3276ca;
+  }
+  60% {
+    box-shadow: 2px 5px 10px;
+    color: #00a0fe;
+  }
+  65% {
+    box-shadow: 2px 5px 10px;
+    color: #00c8fe;
+  }
+  70% {
+    box-shadow: 2px 5px 10px;
+    color: #4bfbfc;
+  }
+  75% {
+    box-shadow: 2px 5px 10px;
+    color: #a8f6fa;
+  }
+  80% {
+    box-shadow: 2px 5px 10px;
+    color: #00d6b6;
+  }
+  85% {
+    box-shadow: 2px 5px 10px;
+    color: #5afbd7;
+  }
+  90% {
+    box-shadow: 2px 5px 10px;
+    color: #00ffc6;
+  }
+  95% {
+    box-shadow: 2px 5px 10px;
+    color: #3dffb0;
+  }
+  100% {
+    box-shadow: 2px 5px 10px;
+    color: #00ff97;
+  }
+}
+@keyframes ex18 {
+  0% {
+    box-shadow: 2px 5px 10px;
+    color: #00ff97;
+  }
+  5% {
+    box-shadow: 2px 5px 10px;
+    color: #82ef29;
+  }
+  10% {
+    box-shadow: 2px 5px 10px;
+    color: #b8ff7d;
+  }
+  15% {
+    box-shadow: 2px 5px 10px;
+    color: #ffa782;
+  }
+  20% {
+    box-shadow: 2px 5px 10px;
+    color: #f57a47;
+  }
+  25% {
+    box-shadow: 2px 5px 10px;
+    color: #fb4a00;
+  }
+  30% {
+    box-shadow: 2px 5px 10px;
+    color: #c23220;
+  }
+  35% {
+    box-shadow: 2px 5px 10px;
+    color: #ff57d9;
+  }
+  40% {
+    box-shadow: 2px 5px 10px;
+    color: #ff14ca;
+  }
+  45% {
+    box-shadow: 2px 5px 10px;
+    color: #fd00ff;
+  }
+  50% {
+    box-shadow: 2px 5px 10px;
+    color: #d57a9e;
+  }
+  55% {
+    box-shadow: 2px 5px 10px;
+    color: #7a54fa;
+  }
+  60% {
+    box-shadow: 2px 5px 10px;
+    color: #3276ca;
+  }
+  65% {
+    box-shadow: 2px 5px 10px;
+    color: #00a0fe;
+  }
+  70% {
+    box-shadow: 2px 5px 10px;
+    color: #00c8fe;
+  }
+  75% {
+    box-shadow: 2px 5px 10px;
+    color: #4bfbfc;
+  }
+  80% {
+    box-shadow: 2px 5px 10px;
+    color: #a8f6fa;
+  }
+  85% {
+    box-shadow: 2px 5px 10px;
+    color: #00d6b6;
+  }
+  90% {
+    box-shadow: 2px 5px 10px;
+    color: #5afbd7;
+  }
+  95% {
+    box-shadow: 2px 5px 10px;
+    color: #00ffc6;
+  }
+  100% {
+    box-shadow: 2px 5px 10px;
+    color: #3dffb0;
+  }
+}
+@keyframes ex19 {
+  0% {
+    box-shadow: 2px 5px 10px;
+    color: #3dffb0;
+  }
+  5% {
+    box-shadow: 2px 5px 10px;
+    color: #00ff97;
+  }
+  10% {
+    box-shadow: 2px 5px 10px;
+    color: #82ef29;
+  }
+  15% {
+    box-shadow: 2px 5px 10px;
+    color: #b8ff7d;
+  }
+  20% {
+    box-shadow: 2px 5px 10px;
+    color: #ffa782;
+  }
+  25% {
+    box-shadow: 2px 5px 10px;
+    color: #f57a47;
+  }
+  30% {
+    box-shadow: 2px 5px 10px;
+    color: #fb4a00;
+  }
+  35% {
+    box-shadow: 2px 5px 10px;
+    color: #c23220;
+  }
+  40% {
+    box-shadow: 2px 5px 10px;
+    color: #ff57d9;
+  }
+  45% {
+    box-shadow: 2px 5px 10px;
+    color: #ff14ca;
+  }
+  50% {
+    box-shadow: 2px 5px 10px;
+    color: #fd00ff;
+  }
+  55% {
+    box-shadow: 2px 5px 10px;
+    color: #d57a9e;
+  }
+  60% {
+    box-shadow: 2px 5px 10px;
+    color: #7a54fa;
+  }
+  65% {
+    box-shadow: 2px 5px 10px;
+    color: #3276ca;
+  }
+  70% {
+    box-shadow: 2px 5px 10px;
+    color: #00a0fe;
+  }
+  75% {
+    box-shadow: 2px 5px 10px;
+    color: #00c8fe;
+  }
+  80% {
+    box-shadow: 2px 5px 10px;
+    color: #4bfbfc;
+  }
+  85% {
+    box-shadow: 2px 5px 10px;
+    color: #a8f6fa;
+  }
+  90% {
+    box-shadow: 2px 5px 10px;
+    color: #00d6b6;
+  }
+  95% {
+    box-shadow: 2px 5px 10px;
+    color: #5afbd7;
+  }
+  100% {
+    box-shadow: 2px 5px 10px;
+    color: #00ffc6;
+  }
+}
+@keyframes ex20 {
+  0% {
+    box-shadow: 1px 5px 10px;
+    color: #00ffc6;
+  }
+  5% {
+    box-shadow: 1px 5px 10px;
+    color: #3dffb0;
+  }
+  10% {
+    box-shadow: 1px 5px 10px;
+    color: #00ff97;
+  }
+  15% {
+    box-shadow: 1px 5px 10px;
+    color: #82ef29;
+  }
+  20% {
+    box-shadow: 1px 5px 10px;
+    color: #b8ff7d;
+  }
+  25% {
+    box-shadow: 1px 5px 10px;
+    color: #ffa782;
+  }
+  30% {
+    box-shadow: 1px 5px 10px;
+    color: #f57a47;
+  }
+  35% {
+    box-shadow: 1px 5px 10px;
+    color: #fb4a00;
+  }
+  40% {
+    box-shadow: 1px 5px 10px;
+    color: #c23220;
+  }
+  45% {
+    box-shadow: 1px 5px 10px;
+    color: #ff57d9;
+  }
+  50% {
+    box-shadow: 1px 5px 10px;
+    color: #ff14ca;
+  }
+  55% {
+    box-shadow: 1px 5px 10px;
+    color: #fd00ff;
+  }
+  60% {
+    box-shadow: 1px 5px 10px;
+    color: #d57a9e;
+  }
+  65% {
+    box-shadow: 1px 5px 10px;
+    color: #7a54fa;
+  }
+  70% {
+    box-shadow: 1px 5px 10px;
+    color: #3276ca;
+  }
+  75% {
+    box-shadow: 1px 5px 10px;
+    color: #00a0fe;
+  }
+  80% {
+    box-shadow: 1px 5px 10px;
+    color: #00c8fe;
+  }
+  85% {
+    box-shadow: 1px 5px 10px;
+    color: #4bfbfc;
+  }
+  90% {
+    box-shadow: 1px 5px 10px;
+    color: #a8f6fa;
+  }
+  95% {
+    box-shadow: 1px 5px 10px;
+    color: #00d6b6;
+  }
+  100% {
+    box-shadow: 1px 5px 10px;
+    color: #5afbd7;
+  }
+}
+@keyframes ex21 {
+  0% {
+    box-shadow: 1px 5px 10px;
+    color: #5afbd7;
+  }
+  5% {
+    box-shadow: 1px 5px 10px;
+    color: #00ffc6;
+  }
+  10% {
+    box-shadow: 1px 5px 10px;
+    color: #3dffb0;
+  }
+  15% {
+    box-shadow: 1px 5px 10px;
+    color: #00ff97;
+  }
+  20% {
+    box-shadow: 1px 5px 10px;
+    color: #82ef29;
+  }
+  25% {
+    box-shadow: 1px 5px 10px;
+    color: #b8ff7d;
+  }
+  30% {
+    box-shadow: 1px 5px 10px;
+    color: #ffa782;
+  }
+  35% {
+    box-shadow: 1px 5px 10px;
+    color: #f57a47;
+  }
+  40% {
+    box-shadow: 1px 5px 10px;
+    color: #fb4a00;
+  }
+  45% {
+    box-shadow: 1px 5px 10px;
+    color: #c23220;
+  }
+  50% {
+    box-shadow: 1px 5px 10px;
+    color: #ff57d9;
+  }
+  55% {
+    box-shadow: 1px 5px 10px;
+    color: #ff14ca;
+  }
+  60% {
+    box-shadow: 1px 5px 10px;
+    color: #fd00ff;
+  }
+  65% {
+    box-shadow: 1px 5px 10px;
+    color: #d57a9e;
+  }
+  70% {
+    box-shadow: 1px 5px 10px;
+    color: #7a54fa;
+  }
+  75% {
+    box-shadow: 1px 5px 10px;
+    color: #3276ca;
+  }
+  80% {
+    box-shadow: 1px 5px 10px;
+    color: #00a0fe;
+  }
+  85% {
+    box-shadow: 1px 5px 10px;
+    color: #00c8fe;
+  }
+  90% {
+    box-shadow: 1px 5px 10px;
+    color: #4bfbfc;
+  }
+  95% {
+    box-shadow: 1px 5px 10px;
+    color: #a8f6fa;
+  }
+  100% {
+    box-shadow: 1px 5px 10px;
+    color: #00d6b6;
+  }
+}
+
+.window1 {
+  width: 8px;
+  height: 6px;
+  float: left;
+  margin: 1px;
+  animation: wd1 4s linear infinite;
+}
+
+.window2 {
+  width: 8px;
+  height: 6px;
+  float: left;
+  margin: 1px;
+  animation: wd2 4s linear infinite;
+}
+
+@keyframes wd1 {
+  0% {
+    background-color: #00d6b6;
+  }
+  5% {
+    background-color: #5afbd7;
+  }
+  10% {
+    background-color: #00ffc6;
+  }
+  15% {
+    background-color: #3dffb0;
+  }
+  20% {
+    background-color: #00ff97;
+  }
+  25% {
+    background-color: #82ef29;
+  }
+  30% {
+    background-color: #b8ff7d;
+  }
+  35% {
+    background-color: #ffa782;
+  }
+  40% {
+    background-color: #f57a47;
+  }
+  45% {
+    background-color: #fb4a00;
+  }
+  50% {
+    background-color: #c23220;
+  }
+  55% {
+    background-color: #ff57d9;
+  }
+  60% {
+    background-color: #ff14ca;
+  }
+  65% {
+    background-color: #fd00ff;
+  }
+  70% {
+    background-color: #d57a9e;
+  }
+  75% {
+    background-color: #7a54fa;
+  }
+  80% {
+    background-color: #3276ca;
+  }
+  85% {
+    background-color: #00a0fe;
+  }
+  90% {
+    background-color: #00c8fe;
+  }
+  95% {
+    background-color: #4bfbfc;
+  }
+  100% {
+    background-color: #a8f6fa;
+  }
+}
+@keyframes wd2 {
+  0% {
+    background-color: #ff14ca;
+  }
+  5% {
+    background-color: #fd00ff;
+  }
+  10% {
+    background-color: #d57a9e;
+  }
+  15% {
+    background-color: #7a54fa;
+  }
+  20% {
+    background-color: #3276ca;
+  }
+  25% {
+    background-color: #00a0fe;
+  }
+  30% {
+    background-color: #00c8fe;
+  }
+  35% {
+    background-color: #4bfbfc;
+  }
+  40% {
+    background-color: #a8f6fa;
+  }
+  45% {
+    background-color: #00d6b6;
+  }
+  50% {
+    background-color: #5afbd7;
+  }
+  55% {
+    background-color: #00ffc6;
+  }
+  60% {
+    background-color: #3dffb0;
+  }
+  65% {
+    background-color: #00ff97;
+  }
+  70% {
+    background-color: #82ef29;
+  }
+  75% {
+    background-color: #b8ff7d;
+  }
+  80% {
+    background-color: #ffa782;
+  }
+  85% {
+    background-color: #f57a47;
+  }
+  90% {
+    background-color: #fb4a00;
+  }
+  95% {
+    background-color: #c23220;
+  }
+  100% {
+    background-color: #ff57d9;
+  }
+}
+.spaceLed {
+  width: 80px;
+  height: 1px;
+  margin: auto;
+  animation: abc 4s linear infinite;
+}
+
+.f,
+.j,
+.so5 {
+  height: 2px;
+  width: 10px;
+  border-top: 1px solid #2c2c2c;
+  border-radius: 5px;
+  left: 50%;
+  bottom: -5px;
+  margin: -7px 0 0 16px;
+  background: #0f0f0f;
+}
+@keyframes abc {
+  0% {
+    background-color: #00c8fe;
+  }
+  5% {
+    background-color: #4bfbfc;
+  }
+  10% {
+    background-color: #a8f6fa;
+  }
+  15% {
+    background-color: #00d6b6;
+  }
+  20% {
+    background-color: #5afbd7;
+  }
+  25% {
+    background-color: #00ffc6;
+  }
+  30% {
+    background-color: #3dffb0;
+  }
+  35% {
+    background-color: #00ff97;
+  }
+  40% {
+    background-color: #82ef29;
+  }
+  45% {
+    background-color: #b8ff7d;
+  }
+  50% {
+    background-color: #ffa782;
+  }
+  55% {
+    background-color: #f57a47;
+  }
+  60% {
+    background-color: #fb4a00;
+  }
+  65% {
+    background-color: #c23220;
+  }
+  70% {
+    background-color: #ff57d9;
+  }
+  75% {
+    background-color: #ff14ca;
+  }
+  80% {
+    background-color: #fd00ff;
+  }
+  85% {
+    background-color: #d57a9e;
+  }
+  90% {
+    background-color: #7a54fa;
+  }
+  95% {
+    background-color: #3276ca;
+  }
+  100% {
+    background-color: #00a0fe;
+  }
+}
